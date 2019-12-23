@@ -28,6 +28,18 @@ class WeatherInfoPresenter: NSObject, WeatherInfoPresenterProtocol {
     
     func showDayForecast(dayForecast: ForecatsForDayInfo) {
         self.fillDataSource(weathersArray: dayForecast.forecatsForHoursArray)
+        
+        let dateText = self.dateText(from: dayForecast.date)
+        self.weatherInfoViewController.fillDateLabel(by: dateText)
+        
+        let maxTemperature = Formatter.temperatureString(from: dayForecast.maxTepmerature)
+        let minTemperature = Formatter.temperatureString(from: dayForecast.minTepmerature)
+        let temperatureText = "\(maxTemperature)/ \(minTemperature)"
+        self.weatherInfoViewController.fillTemperatureLabel(by: temperatureText)
+        
+//        self.weatherInfoViewController.fillHumidityLabel(by: dayForecast.)
+//        self.weatherInfoViewController.fillWindLabel(by: <#T##String#>)
+
     }
     
     private func fillDataSource(weathersArray: [WeatherInfo]) {
@@ -38,5 +50,12 @@ class WeatherInfoPresenter: NSObject, WeatherInfoPresenterProtocol {
         }
         self.dataSource.items = dataSourceItemArray
         
+    }
+    
+    private func dateText(from date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EE, dd MMMM"
+        let text = dateFormatter.string(from: date)
+        return text
     }
 }

@@ -10,31 +10,29 @@ import UIKit
 
 class HourForecastCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var hoursLabel: UILabel!
+    @IBOutlet weak var minutesLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var weatherImageView: UIImageView!
     
-    private func timeTextFrom(date: Date) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH:mm"
-        let timeText = dateFormatter.string(from: date)
-        return timeText
-    }
 }
 
 extension HourForecastCollectionViewCell: DataAwareCell {
     
     func fillWithData(_ data: DataSourceItem) {
         if let weatherInfo = data.payload as? WeatherInfo {
-            let temperature = Int(round(weatherInfo.main.temp))
-            let temperatureText = "\(temperature)°"
+            let temperature = weatherInfo.main.temp
+            let temperatureText = Formatter.temperatureString(from: temperature)
             self.temperatureLabel.text = temperatureText
             
             let timeInterval = TimeInterval(weatherInfo.dt)
             let date = Date.init(timeIntervalSince1970: timeInterval)
 
-            let timeText = self.timeTextFrom(date: date)
-            self.timeLabel.text = timeText
+            let hoursText = Formatter.hoursText(from: date)
+            self.hoursLabel.text = hoursText
+            
+            let minutesText = Formatter.minutesText(from: date)
+            self.minutesLabel.text = minutesText
         }
     }
     

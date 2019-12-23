@@ -33,14 +33,6 @@ class ForecastTableViewCell: UITableViewCell {
         }
         // Configure the view for the selected state
     }
-    
-    private func weekDayTextFrom(date: Date) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EE"
-        let weekDay = dateFormatter.string(from: date)
-        return weekDay
-    }
-
 
 }
 
@@ -48,13 +40,13 @@ extension ForecastTableViewCell: DataAwareCell {
     
     func fillWithData(_ data: DataSourceItem) {
         if let dayForecast = data.payload as? ForecatsForDayInfo {
-            let maxTemperature = Int(round(dayForecast.maxTepmerature))
-            let minTemperature = Int(round(dayForecast.minTepmerature))
-            let temperatureText = "\(maxTemperature)°/ \(minTemperature)°"
+            let maxTemperature = Formatter.temperatureString(from: dayForecast.maxTepmerature)
+            let minTemperature = Formatter.temperatureString(from: dayForecast.minTepmerature)
+            let temperatureText = "\(maxTemperature)/ \(minTemperature)"
             self.temperatureLabel.text = temperatureText
             
             let date = dayForecast.date
-            let weekday = self.weekDayTextFrom(date: date)
+            let weekday = Formatter.dayOfWeek(from: date)
             self.dayLabel.text = weekday
         }
     }

@@ -12,6 +12,11 @@ protocol WeatherInfoViewControllerProtocol: AnyObject {
     
     var hourForecastCollectionView: UICollectionView! {get}
     var hourForecastCellIdentify: String {get}
+    func fillDateLabel(by text: String)
+    func fillTemperatureLabel(by text: String)
+    func fillHumidityLabel(by text: String)
+    func fillWindLabel(by text: String)
+
 
 }
 
@@ -33,6 +38,23 @@ class WeatherInfoViewController: UIViewController, WeatherInfoViewControllerProt
     
     let hourForecastCellIdentify = "HourForecastCell"
 
+    func fillDateLabel(by text: String) {
+        self.dateLabel.text = text
+    }
+    
+    func fillTemperatureLabel(by text: String) {
+        self.temperatureLabel.text = text
+    }
+    
+    func fillHumidityLabel(by text: String) {
+        self.humidityLabel.text = text
+    }
+    
+    func fillWindLabel(by text: String) {
+        self.windLabel.text = text
+    }
+    
+    
     /*
     // MARK: - Navigation
 
