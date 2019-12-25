@@ -36,6 +36,7 @@
 		88F17E3C23B062F9003BCF50 /* CitiesSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F17E3B23B062F9003BCF50 /* CitiesSearchPresenter.swift */; };
 		88F17E3E23B065FA003BCF50 /* CitySearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F17E3D23B065FA003BCF50 /* CitySearchTableViewCell.swift */; };
 		88F17E4023B06B91003BCF50 /* CitySearchInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F17E3F23B06B91003BCF50 /* CitySearchInfo.swift */; };
+		88F17E4223B071DB003BCF50 /* CitySearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F17E4123B071DB003BCF50 /* CitySearchManager.swift */; };
 		CF8E50BA054DB0C3C75E79F4 /* Pods_WeatherForecast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51665AB00C8FBFE1B0694E82 /* Pods_WeatherForecast.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +75,7 @@
 		88F17E3B23B062F9003BCF50 /* CitiesSearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesSearchPresenter.swift; sourceTree = "<group>"; };
 		88F17E3D23B065FA003BCF50 /* CitySearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySearchTableViewCell.swift; sourceTree = "<group>"; };
 		88F17E3F23B06B91003BCF50 /* CitySearchInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySearchInfo.swift; sourceTree = "<group>"; };
+		88F17E4123B071DB003BCF50 /* CitySearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySearchManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +231,7 @@
 				88C7A28C231942270001071B /* APIManager.swift */,
 				885A5604232B801C00FC2776 /* WeatherForecastManager.swift */,
 				885A5606232B806300FC2776 /* WeatherLocationManager.swift */,
+				88F17E4123B071DB003BCF50 /* CitySearchManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 				88F17E4023B06B91003BCF50 /* CitySearchInfo.swift in Sources */,
 				885A5605232B801C00FC2776 /* WeatherForecastManager.swift in Sources */,
 				885A5601232A267C00FC2776 /* CollectionDatasource.swift in Sources */,
+				88F17E4223B071DB003BCF50 /* CitySearchManager.swift in Sources */,
 				88F17E3C23B062F9003BCF50 /* CitiesSearchPresenter.swift in Sources */,
 				885A5600232A267C00FC2776 /* DataSourceItem.swift in Sources */,
 				885EE1D8232D935A00EF51C6 /* ForecastListPresenter.swift in Sources */,

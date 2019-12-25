@@ -15,21 +15,29 @@ class CitiesSearchPresenter: NSObject, UISearchResultsUpdating {
     
     func viewDidLoad() {
         dataSource.tableView = self.tableViewController.tableView
-        self.fillDataSource()
-    }
-    
-    func fillDataSource() {
-        var dataSourceItemArray: [DataSourceItem] = []
-        for index in 1...5 {
-            let citySearchInfo = CitySearchInfo.init(cityName: "City name \(index)")
-            let dataSourceItem = DataSourceItem.init(self.tableViewController.cellIdentify, payload: citySearchInfo)
-            dataSourceItemArray.append(dataSourceItem)
-        }
-        self.dataSource.items = dataSourceItemArray
+        self.updateDataSourceBy(filterText: "")
     }
     
     func updateSearchResults(for searchController: UISearchController) {
-      // TODO
+       let searchBar = searchController.searchBar
+        if let filterText = searchBar.text {
+            self.updateDataSourceBy(filterText: filterText)
+        }
+    }
+//    func cityBy(name: String) -> [CitySearchInfo] {
+
+    func updateDataSourceBy(filterText: String) {
+        var dataSourceItemArray: [DataSourceItem] = []
+
+        if filterText.count >= 3 {
+            let citiesArray = CitySearchManager.shared().cityBy(name: filterText)
+            
+            for citySearchInfo in citiesArray {
+                let dataSourceItem = DataSourceItem.init(self.tableViewController.cellIdentify, payload: citySearchInfo)
+                dataSourceItemArray.append(dataSourceItem)
+            }
+        }
+        self.dataSource.items = dataSourceItemArray
     }
 }
 
