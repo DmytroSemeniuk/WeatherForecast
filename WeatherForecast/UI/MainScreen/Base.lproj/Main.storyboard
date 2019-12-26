@@ -116,6 +116,9 @@
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="cityButton" destination="4jY-QO-h8l" id="B95-pQ-jhK"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lF3-nr-hCI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

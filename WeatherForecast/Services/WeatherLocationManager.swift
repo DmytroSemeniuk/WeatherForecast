@@ -34,4 +34,11 @@ class WeatherLocationManager: NSObject {
         self.lon = cityInfo.lon
         NotificationCenter.default.post(name: .didChangeLocation, object: nil)
     }
+    
+    var cityName: String? {
+        if let cityInfo = self.citySearchInfo {
+            return cityInfo.name
+        }
+        return nil
+    }
 }

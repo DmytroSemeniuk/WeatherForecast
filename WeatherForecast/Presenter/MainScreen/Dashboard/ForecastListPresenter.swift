@@ -17,6 +17,8 @@ class ForecastListPresenter: NSObject {
     
     func viewDidLoad() {
         dataSource.tableView = self.viewController.tableView
+        self.fillCityButton()
+        NotificationCenter.default.addObserver(self, selector: #selector(didChangeLocation), name: .didChangeLocation, object: nil)
     }
     
     func viewWillAppear(_ animated: Bool) {
@@ -63,6 +65,18 @@ class ForecastListPresenter: NSObject {
     
     private func fillWeatherInfo(dayForecast: ForecatsForDayInfo) {
         self.weatherInfoPresenter.showDayForecast(dayForecast: dayForecast)
+    }
+    
+    private func fillCityButton() {
+        var cityName = "Choose city"
+        if let name = WeatherLocationManager.shared().cityName {
+            cityName = name
+        }
+        self.viewController.fillCityButtonBy(cityName: cityName)
+    }
+    
+    @objc private func didChangeLocation() {
+        self.fillCityButton()
     }
     
 }
