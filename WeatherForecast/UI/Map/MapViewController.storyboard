@@ -23,12 +23,21 @@
                                     <outletCollection property="gestureRecognizers" destination="IDc-Qj-EHg" appends="YES" id="fiU-jl-Q6t"/>
                                 </connections>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="brs-8L-bJ4">
+                                <rect key="frame" x="256" y="784" width="110" height="30"/>
+                                <state key="normal" title="Curren Location"/>
+                                <connections>
+                                    <action selector="showCurrentLocation" destination="RhZ-xj-CHb" eventType="touchUpInside" id="wrq-ce-113"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="WoB-Tw-Icd" firstAttribute="trailing" secondItem="vAd-K1-BXq" secondAttribute="trailing" id="4Us-hG-j5C"/>
                             <constraint firstItem="vAd-K1-BXq" firstAttribute="top" secondItem="WoB-Tw-Icd" secondAttribute="top" id="JL9-o7-bdd"/>
+                            <constraint firstItem="WoB-Tw-Icd" firstAttribute="bottom" secondItem="brs-8L-bJ4" secondAttribute="bottom" constant="48" id="LE4-Wj-fMj"/>
                             <constraint firstAttribute="bottom" secondItem="vAd-K1-BXq" secondAttribute="bottom" id="Nwl-Rp-oQC"/>
+                            <constraint firstItem="WoB-Tw-Icd" firstAttribute="trailing" secondItem="brs-8L-bJ4" secondAttribute="trailing" constant="48" id="VES-xp-PzT"/>
                             <constraint firstItem="vAd-K1-BXq" firstAttribute="leading" secondItem="WoB-Tw-Icd" secondAttribute="leading" id="xOQ-gS-xd8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WoB-Tw-Icd"/>

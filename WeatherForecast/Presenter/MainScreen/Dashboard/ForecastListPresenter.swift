@@ -39,7 +39,7 @@ class ForecastListPresenter: NSObject {
     }
     
     func showMap() {
-        Router.shared().showMap()
+        _ = Router.shared().showMap()
     }
     
     @objc func fillDataSource() {

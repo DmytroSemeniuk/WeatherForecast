@@ -20,20 +20,20 @@ class MapViewController: UIViewController {
         self.presenter.viewController = self
     }
     
-    @IBAction func longTap(sender: UIGestureRecognizer) {
+    @IBAction private func longTap(sender: UIGestureRecognizer) {
         switch sender.state {
         case .began:
-            self.mapView.removeAnnotations(self.mapView.annotations)
+            self.removeAllAnnotations()
             let locationInView = sender.location(in: mapView)
             let locationOnMap = mapView.convert(locationInView, toCoordinateFrom: mapView)
-            addAnnotation(location: locationOnMap)
+            self.addAnnotation(location: locationOnMap)
             
         default: break
             
         }
     }
 
-    @IBAction func useLocationPressed() {
+    @IBAction private func useLocationPressed() {
         if let annotation = self.mapView.annotations.first {
             let lat = annotation.coordinate.latitude
             let lon = annotation.coordinate.longitude
@@ -41,10 +41,29 @@ class MapViewController: UIViewController {
         }
     }
     
+    @IBAction func showCurrentLocation() {
+        self.presenter.showCurrentLocation()
+    }
+    
     func addAnnotation(location: CLLocationCoordinate2D) {
         let annotation = MKPointAnnotation()
         annotation.coordinate = location
         self.mapView.addAnnotation(annotation)
+    }
+    
+    //MARK: private
+    
+    private func removeAllAnnotations() {
+        self.mapView.removeAnnotations(self.mapView.annotations)
+    }
+
+    //MARK: input
+    
+    func showLocation(location: CLLocationCoordinate2D) {
+        self.removeAllAnnotations()
+        self.addAnnotation(location: location)
+        let region = MKCoordinateRegion(center: location, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        self.mapView.setRegion(region, animated: true)
     }
 
 }
