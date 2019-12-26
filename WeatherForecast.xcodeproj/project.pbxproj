@@ -39,6 +39,9 @@
 		88F17E4223B071DB003BCF50 /* CitySearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F17E4123B071DB003BCF50 /* CitySearchManager.swift */; };
 		88F17E4523B45FE1003BCF50 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F17E4423B45FE1003BCF50 /* MapViewController.swift */; };
 		88F17E4823B463F7003BCF50 /* LocationFromMapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F17E4723B463F7003BCF50 /* LocationFromMapPresenter.swift */; };
+		88F17E4A23B46992003BCF50 /* MapViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88F17E4923B46991003BCF50 /* MapViewController.storyboard */; };
+		88F17E4C23B46A16003BCF50 /* CitiesSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88F17E4B23B46A16003BCF50 /* CitiesSearch.storyboard */; };
+		88F17E4F23B46D77003BCF50 /* MainNavigationController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88F17E4E23B46D77003BCF50 /* MainNavigationController.storyboard */; };
 		CF8E50BA054DB0C3C75E79F4 /* Pods_WeatherForecast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51665AB00C8FBFE1B0694E82 /* Pods_WeatherForecast.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +83,9 @@
 		88F17E4123B071DB003BCF50 /* CitySearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySearchManager.swift; sourceTree = "<group>"; };
 		88F17E4423B45FE1003BCF50 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		88F17E4723B463F7003BCF50 /* LocationFromMapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFromMapPresenter.swift; sourceTree = "<group>"; };
+		88F17E4923B46991003BCF50 /* MapViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapViewController.storyboard; sourceTree = "<group>"; };
+		88F17E4B23B46A16003BCF50 /* CitiesSearch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CitiesSearch.storyboard; sourceTree = "<group>"; };
+		88F17E4E23B46D77003BCF50 /* MainNavigationController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainNavigationController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +211,7 @@
 		88C7A286231914560001071B /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				88F17E4D23B46D5C003BCF50 /* NavigationController */,
 				88F17E3723B05DA5003BCF50 /* CitiesSearch */,
 				88C7A287231914EC0001071B /* MainScreen */,
 				88F17E4323B45FA3003BCF50 /* Map */,
@@ -275,6 +282,7 @@
 		88F17E3723B05DA5003BCF50 /* CitiesSearch */ = {
 			isa = PBXGroup;
 			children = (
+				88F17E4B23B46A16003BCF50 /* CitiesSearch.storyboard */,
 				88F17E3823B05E25003BCF50 /* CityTableViewController.swift */,
 				88F17E3D23B065FA003BCF50 /* CitySearchTableViewCell.swift */,
 			);
@@ -292,6 +300,7 @@
 		88F17E4323B45FA3003BCF50 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				88F17E4923B46991003BCF50 /* MapViewController.storyboard */,
 				88F17E4423B45FE1003BCF50 /* MapViewController.swift */,
 			);
 			path = Map;
@@ -303,6 +312,14 @@
 				88F17E4723B463F7003BCF50 /* LocationFromMapPresenter.swift */,
 			);
 			path = Map;
+			sourceTree = "<group>";
+		};
+		88F17E4D23B46D5C003BCF50 /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				88F17E4E23B46D77003BCF50 /* MainNavigationController.storyboard */,
+			);
+			path = NavigationController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -365,9 +382,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88F17E4A23B46992003BCF50 /* MapViewController.storyboard in Resources */,
 				88C7A27D2316AE230001071B /* LaunchScreen.storyboard in Resources */,
 				88C7A27A2316AE230001071B /* Assets.xcassets in Resources */,
+				88F17E4F23B46D77003BCF50 /* MainNavigationController.storyboard in Resources */,
 				88C7A2752316AE220001071B /* Main.storyboard in Resources */,
+				88F17E4C23B46A16003BCF50 /* CitiesSearch.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RhZ-xj-CHb">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Map-->
+        <scene sceneID="ovA-jJ-6l2">
+            <objects>
+                <viewController id="RhZ-xj-CHb" customClass="MapViewController" customModule="WeatherForecast" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SYI-X9-5dN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="vAd-K1-BXq">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="IDc-Qj-EHg" appends="YES" id="fiU-jl-Q6t"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="WoB-Tw-Icd" firstAttribute="trailing" secondItem="vAd-K1-BXq" secondAttribute="trailing" id="4Us-hG-j5C"/>
+                            <constraint firstItem="vAd-K1-BXq" firstAttribute="top" secondItem="WoB-Tw-Icd" secondAttribute="top" id="JL9-o7-bdd"/>
+                            <constraint firstAttribute="bottom" secondItem="vAd-K1-BXq" secondAttribute="bottom" id="Nwl-Rp-oQC"/>
+                            <constraint firstItem="vAd-K1-BXq" firstAttribute="leading" secondItem="WoB-Tw-Icd" secondAttribute="leading" id="xOQ-gS-xd8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WoB-Tw-Icd"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Map" id="Me3-6w-79g">
+                        <barButtonItem key="rightBarButtonItem" title="Use Location" id="VYw-f8-2yV">
+                            <connections>
+                                <action selector="useLocationPressed" destination="RhZ-xj-CHb" id="xsa-4l-4dw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="vAd-K1-BXq" id="TQq-P0-mVh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S2h-JK-q6n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="IDc-Qj-EHg">
+                    <connections>
+                        <action selector="longTapWithSender:" destination="RhZ-xj-CHb" id="dKT-4S-CgA"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2939" y="-100"/>
+        </scene>
+    </scenes>
+</document>

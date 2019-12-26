@@ -11,14 +11,12 @@ import UIKit
 class CityTableViewController: UITableViewController {
 
     let searchController = UISearchController(searchResultsController: nil)
-    let presenter: CitiesSearchPresenter = CitiesSearchPresenter()
+    var presenter: CitiesSearchPresenter!
     let cellIdentify = "CityCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
-        self.presenter.tableViewController = self
         self.presenter.viewDidLoad()
         
         searchController.obscuresBackgroundDuringPresentation = false

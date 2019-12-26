@@ -34,6 +34,14 @@ class ForecastListPresenter: NSObject {
         self.fillWeatherInfoByItemAt(index: indexPath.row)
     }
     
+    func showCitiesSearch() {
+        _ = Router.shared().showCitiesSearch()
+    }
+    
+    func showMap() {
+        Router.shared().showMap()
+    }
+    
     @objc func fillDataSource() {
         var dataSourceItemArray: [DataSourceItem] = []
         for dayForecast in WeatherForecastManager.shared().getForecast() {

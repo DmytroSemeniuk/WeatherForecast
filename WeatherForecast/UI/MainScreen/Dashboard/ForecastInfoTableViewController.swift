@@ -10,13 +10,12 @@ import UIKit
 
 class ForecastInfoTableViewController: UITableViewController {
 
-    let presenter: ForecastListPresenter = ForecastListPresenter()
+    var presenter: ForecastListPresenter!
     
     @IBOutlet weak var cityButton: UIBarButtonItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.presenter.viewController = self
         self.presenter.viewDidLoad()
     }
 
@@ -28,6 +27,14 @@ class ForecastInfoTableViewController: UITableViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.presenter.viewWillDisappear(animated)
+    }
+    
+    @IBAction func searchCityPressed() {
+        self.presenter.showCitiesSearch()
+    }
+    
+    @IBAction func mapPressed() {
+        self.presenter.showMap()
     }
     
     // MARK: - Input

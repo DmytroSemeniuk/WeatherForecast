@@ -13,7 +13,7 @@ class MapViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
 
-    let presenter: LocationFromMapPresenter = LocationFromMapPresenter()
+    var presenter: LocationFromMapPresenter!
 
     override func viewDidLoad() {
         super.viewDidLoad()
