@@ -46,4 +46,5 @@ class CitySearchManager: NSObject {
         }
         return filtredArray
     }
+    
 }

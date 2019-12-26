@@ -29,6 +29,11 @@ class CityTableViewController: UITableViewController {
 
     }
 
+    // MARK: UITableViewDelegate
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.presenter.tableView(tableView, didSelectRowAt: indexPath)
+    }
     
 
 }

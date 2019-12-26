@@ -19,6 +19,7 @@ class WeatherForecastManager: NSObject {
     static func shared() -> WeatherForecastManager {
         if uniqueInstance == nil {
             uniqueInstance = WeatherForecastManager()
+            NotificationCenter.default.addObserver(uniqueInstance!, selector: #selector(didChangeLocation), name: .didChangeLocation, object: nil)
         }
         return uniqueInstance!
     }
@@ -45,7 +46,9 @@ class WeatherForecastManager: NSObject {
     }
     
     private func loadForecastInfo() {
-        _ = APIManager.shared().getWeather(completion: { [self] (responce) in
+        let lat = WeatherLocationManager.shared().lat
+        let lon = WeatherLocationManager.shared().lon
+        _ = APIManager.shared().getWeatherIn(lat:lat, lon:lon, completion: { [self] (responce) in
             if let forecastInfo = responce.value {
                 self.forecastInfo = forecastInfo
             }
@@ -111,8 +114,17 @@ class WeatherForecastManager: NSObject {
     private func forecastInfoChangeNotify() {
         NotificationCenter.default.post(name: .didChangeForecastInfo, object: nil)
     }
+    
+    @objc private func didChangeLocation() {
+        self.needToReloadData()
+    }
+
 }
 
 extension Notification.Name {
     static let didChangeForecastInfo = Notification.Name("didChangeForecastInfo")
+}
+
+extension Notification.Name {
+    static let didChangeLocation = Notification.Name("didChangeLocation")
 }

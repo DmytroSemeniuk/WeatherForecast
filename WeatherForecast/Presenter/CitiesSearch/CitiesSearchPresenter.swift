@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CitiesSearchPresenter: NSObject, UISearchResultsUpdating {
+class CitiesSearchPresenter: NSObject, UISearchResultsUpdating, UITableViewDelegate {
 
     let dataSource: TableSectionDatasource = TableSectionDatasource()
     weak var tableViewController: CityTableViewController!
@@ -24,7 +24,6 @@ class CitiesSearchPresenter: NSObject, UISearchResultsUpdating {
             self.updateDataSourceBy(filterText: filterText)
         }
     }
-//    func cityBy(name: String) -> [CitySearchInfo] {
 
     func updateDataSourceBy(filterText: String) {
         var dataSourceItemArray: [DataSourceItem] = []
@@ -38,6 +37,22 @@ class CitiesSearchPresenter: NSObject, UISearchResultsUpdating {
             }
         }
         self.dataSource.items = dataSourceItemArray
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cityInfo = self.itemAt(index: indexPath.row) as? CitySearchInfo {
+            WeatherLocationManager.shared().didChangeCityLocation(cityInfo: cityInfo)
+            self.tableViewController.navigationController?.popViewController(animated: true)
+        }
+    }
+    
+    private func itemAt(index: Int) -> AnyHashable? {
+        let itemsArray = self.dataSource.items
+        if itemsArray.count > index {
+            let dataSourceItem = itemsArray[index]
+            return dataSourceItem.payload
+        }
+        return nil
     }
 }
 

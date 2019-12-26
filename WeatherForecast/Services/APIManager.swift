@@ -25,9 +25,7 @@ class APIManager: NSObject {
     
     let apiKey: String = "d64161c08f711e4f08b0a4197c018779"
     let session = Alamofire.Session()
-    let lat: Float = 47.8228900
-    let lon: Float = 35.1903100
-    func getWeather(completion: @escaping (DataResponse<ForecastInfo>) -> Void) -> Request {
+    func getWeatherIn(lat: Double, lon: Double, completion: @escaping (DataResponse<ForecastInfo>) -> Void) -> Request {
         let url = "http://api.openweathermap.org/data/2.5/forecast?lat=\(lat)&lon=\(lon)&,uk&units=metric&APPID=\(apiKey)"
         
         // Set up the call and fire it off
