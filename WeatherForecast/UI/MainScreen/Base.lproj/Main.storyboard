@@ -16,7 +16,14 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="WZi-uq-WsX">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" name="MainColor"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="sOE-sO-loG" kind="relationship" relationship="rootViewController" id="qa4-yE-jwt"/>
@@ -112,8 +119,11 @@
                                 <segue destination="pn1-xC-f9b" kind="show" id="DKJ-QU-OzL"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="shdfhd" id="op3-MG-tA7">
+                        <barButtonItem key="rightBarButtonItem" title="Map" id="op3-MG-tA7">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="IdA-Zg-4Tz" kind="show" id="WtB-Wz-4bO"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -296,7 +306,7 @@
             </objects>
             <point key="canvasLocation" x="1088" y="-100"/>
         </scene>
-        <!--City Table View Controller-->
+        <!--Filter-->
         <scene sceneID="iE2-qr-M66">
             <objects>
                 <tableViewController id="pn1-xC-f9b" customClass="CityTableViewController" customModule="WeatherForecast" customModuleProvider="target" sceneMemberID="viewController">
@@ -319,11 +329,56 @@
                             <outlet property="delegate" destination="pn1-xC-f9b" id="Aa8-Id-z2w"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Oo1-bv-C0o"/>
+                    <navigationItem key="navigationItem" title="Filter" id="Oo1-bv-C0o"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mGc-9t-1f7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2106" y="-100"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="u22-QY-hzl">
+            <objects>
+                <viewController id="IdA-Zg-4Tz" customClass="MapViewController" customModule="WeatherForecast" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PlE-yM-VoU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="PbD-TW-Egz">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="v3D-7y-xRT" appends="YES" id="2Tc-eZ-U2k"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ltf-Xi-5SV" firstAttribute="trailing" secondItem="PbD-TW-Egz" secondAttribute="trailing" id="4dy-io-EBy"/>
+                            <constraint firstItem="PbD-TW-Egz" firstAttribute="leading" secondItem="ltf-Xi-5SV" secondAttribute="leading" id="MvX-Zz-ULz"/>
+                            <constraint firstItem="PbD-TW-Egz" firstAttribute="top" secondItem="ltf-Xi-5SV" secondAttribute="top" id="ho5-vX-6bj"/>
+                            <constraint firstAttribute="bottom" secondItem="PbD-TW-Egz" secondAttribute="bottom" id="sPI-lq-VG8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ltf-Xi-5SV"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Map" id="Kkq-Sh-G3k">
+                        <barButtonItem key="rightBarButtonItem" title="Use Location" id="8N8-yh-ih5">
+                            <connections>
+                                <action selector="useLocationPressed" destination="IdA-Zg-4Tz" id="Dhn-1q-ZEZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="PbD-TW-Egz" id="Yao-SV-dui"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oV5-YL-7R7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="v3D-7y-xRT">
+                    <connections>
+                        <action selector="longTapWithSender:" destination="IdA-Zg-4Tz" id="3ie-mH-FJS"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2939" y="-100"/>
         </scene>
     </scenes>
     <resources>

@@ -37,6 +37,8 @@
 		88F17E3E23B065FA003BCF50 /* CitySearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F17E3D23B065FA003BCF50 /* CitySearchTableViewCell.swift */; };
 		88F17E4023B06B91003BCF50 /* CitySearchInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F17E3F23B06B91003BCF50 /* CitySearchInfo.swift */; };
 		88F17E4223B071DB003BCF50 /* CitySearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F17E4123B071DB003BCF50 /* CitySearchManager.swift */; };
+		88F17E4523B45FE1003BCF50 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F17E4423B45FE1003BCF50 /* MapViewController.swift */; };
+		88F17E4823B463F7003BCF50 /* LocationFromMapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F17E4723B463F7003BCF50 /* LocationFromMapPresenter.swift */; };
 		CF8E50BA054DB0C3C75E79F4 /* Pods_WeatherForecast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51665AB00C8FBFE1B0694E82 /* Pods_WeatherForecast.framework */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +78,8 @@
 		88F17E3D23B065FA003BCF50 /* CitySearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySearchTableViewCell.swift; sourceTree = "<group>"; };
 		88F17E3F23B06B91003BCF50 /* CitySearchInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySearchInfo.swift; sourceTree = "<group>"; };
 		88F17E4123B071DB003BCF50 /* CitySearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySearchManager.swift; sourceTree = "<group>"; };
+		88F17E4423B45FE1003BCF50 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		88F17E4723B463F7003BCF50 /* LocationFromMapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFromMapPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,8 +134,9 @@
 		885EE1D6232D92CE00EF51C6 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				885EE1D9232D938E00EF51C6 /* MainScreen */,
 				88F17E3A23B062B3003BCF50 /* CitiesSearch */,
+				885EE1D9232D938E00EF51C6 /* MainScreen */,
+				88F17E4623B463C2003BCF50 /* Map */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -200,8 +205,9 @@
 		88C7A286231914560001071B /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				88C7A287231914EC0001071B /* MainScreen */,
 				88F17E3723B05DA5003BCF50 /* CitiesSearch */,
+				88C7A287231914EC0001071B /* MainScreen */,
+				88F17E4323B45FA3003BCF50 /* Map */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -281,6 +287,22 @@
 				88F17E3B23B062F9003BCF50 /* CitiesSearchPresenter.swift */,
 			);
 			path = CitiesSearch;
+			sourceTree = "<group>";
+		};
+		88F17E4323B45FA3003BCF50 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				88F17E4423B45FE1003BCF50 /* MapViewController.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		88F17E4623B463C2003BCF50 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				88F17E4723B463F7003BCF50 /* LocationFromMapPresenter.swift */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -411,6 +433,7 @@
 				885A560D232BBD9C00FC2776 /* ForecastInfo.swift in Sources */,
 				885A560B232BBD3C00FC2776 /* CityInfo.swift in Sources */,
 				885EE1DE2334CAFB00EF51C6 /* WeatherInfoPresenter.swift in Sources */,
+				88F17E4823B463F7003BCF50 /* LocationFromMapPresenter.swift in Sources */,
 				88C7A290231E455D0001071B /* WeatherInfo.swift in Sources */,
 				88F17E3E23B065FA003BCF50 /* CitySearchTableViewCell.swift in Sources */,
 				885EE1D5232D845400EF51C6 /* ForecastTableViewCell.swift in Sources */,
@@ -425,6 +448,7 @@
 				88F17E3C23B062F9003BCF50 /* CitiesSearchPresenter.swift in Sources */,
 				885A5600232A267C00FC2776 /* DataSourceItem.swift in Sources */,
 				885EE1D8232D935A00EF51C6 /* ForecastListPresenter.swift in Sources */,
+				88F17E4523B45FE1003BCF50 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
