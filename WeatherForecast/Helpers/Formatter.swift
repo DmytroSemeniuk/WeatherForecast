@@ -21,6 +21,17 @@ class Formatter: NSObject {
         return temperatureText
     }
     
+    static func humidityString(from humidity: Int) -> String {
+        let humidityText = "\(humidity)%"
+        return humidityText
+    }
+    
+    static func windString(from wind: Double) -> String {
+        let roundWind = Int(round(wind))
+        let windText = "\(roundWind)m/sec"
+        return windText
+    }
+    
     static func hoursText(from date: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH"

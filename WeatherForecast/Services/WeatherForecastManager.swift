@@ -107,7 +107,9 @@ class WeatherForecastManager: NSObject {
         let date = Date.init(timeIntervalSince1970: timeInterval)
         let tempMin = weather.main.tempMin
         let tempMax = weather.main.tempMax
-        let forecatsForDayInfo = ForecatsForDayInfo.init(date: date, minTepmerature: tempMin, maxTepmerature: tempMax, hoursForecastArray: [weather])
+        let humidity = weather.main.humidity
+        let wind = weather.wind.speed
+        let forecatsForDayInfo = ForecatsForDayInfo.init(date: date, minTepmerature: tempMin, maxTepmerature: tempMax, humidity: humidity, wind: wind, hoursForecastArray: [weather])
         return forecatsForDayInfo
     }
     

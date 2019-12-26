@@ -12,12 +12,16 @@ class ForecatsForDayInfo: Hashable {
 
     let date: Date
     var minTepmerature, maxTepmerature: Double
+    var humidity: Int
+    var wind: Double
     var forecatsForHoursArray: [WeatherInfo]
     
-    init(date: Date, minTepmerature: Double, maxTepmerature: Double, hoursForecastArray: [WeatherInfo] ) {
+    init(date: Date, minTepmerature: Double, maxTepmerature: Double, humidity: Int, wind: Double, hoursForecastArray: [WeatherInfo] ) {
         self.date = date
         self.minTepmerature = minTepmerature
         self.maxTepmerature = maxTepmerature
+        self.humidity = humidity
+        self.wind = wind
         self.forecatsForHoursArray = hoursForecastArray
     }
     

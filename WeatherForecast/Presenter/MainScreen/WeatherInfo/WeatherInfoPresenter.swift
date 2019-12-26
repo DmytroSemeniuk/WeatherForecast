@@ -37,8 +37,11 @@ class WeatherInfoPresenter: NSObject, WeatherInfoPresenterProtocol {
         let temperatureText = "\(maxTemperature)/ \(minTemperature)"
         self.weatherInfoViewController.fillTemperatureLabel(by: temperatureText)
         
-//        self.weatherInfoViewController.fillHumidityLabel(by: dayForecast.)
-//        self.weatherInfoViewController.fillWindLabel(by: <#T##String#>)
+        let humidity = Formatter.humidityString(from: dayForecast.humidity)
+        self.weatherInfoViewController.fillHumidityLabel(by: humidity)
+        
+        let wind = Formatter.windString(from: dayForecast.wind)
+        self.weatherInfoViewController.fillWindLabel(by: wind)
 
     }
     
