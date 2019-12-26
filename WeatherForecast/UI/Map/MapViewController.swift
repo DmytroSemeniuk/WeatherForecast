@@ -22,7 +22,7 @@ class MapViewController: UIViewController {
     
     @IBAction private func longTap(sender: UIGestureRecognizer) {
         switch sender.state {
-        case .began:
+        case .began, .changed:
             self.removeAllAnnotations()
             let locationInView = sender.location(in: mapView)
             let locationOnMap = mapView.convert(locationInView, toCoordinateFrom: mapView)
